@@ -6,23 +6,17 @@ import { updateToDo, deleteToDo } from '../api/data/todoData';
 const TodoStyle = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 643px;
-  height: 68px;
-  left: 399px;
-  top: 233px;
   background-color: #ffffff;
   border-radius: 10px;
+  padding: 10px;
 
   h5 {
     flex-grow: 2;
     width: 134px;
     height: 24px;
-    top: 342px;
-    left: 531px;
     font-family: Arial;
     color: #373a3c;
     font-size: 16px;
-    line-height: 24px;
     display: flex;
     align-items: flex-end;
     margin-left: 20px;
@@ -31,16 +25,11 @@ const TodoStyle = styled.div`
 
   button {
     width: 110px;
-    height: 40px;
-    top: 258px;
     font-family: Arial;
-    font-style: normal;
-    font-weight: normal;
     font-size: 16px;
-    line-height: 21px;
     color: white;
     border-radius: 5px;
-    margin-right: 9px;
+    margin: 3px;
   }
 `;
 

@@ -4,50 +4,44 @@ import PropTypes from 'prop-types';
 import { useEffect } from 'react/cjs/react.development';
 import { createTodo, updateToDo } from '../api/data/todoData';
 
-const DivStyle = styled.div`
+const DivStyle = styled.form`
   display: flex;
+  justfiy-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  margin-top: 20px;
 `;
 
 const InputStyle = styled.input`
-  width: 438px;
-  height: 38px;
-  position: absolute;
-  left: 399px;
-  top: 145px;
+  display: flex;
   background-color: #ffffff;
   border: 1px solid #66afe9;
-  box-sizing: border-box;
-  border-radius: 4px;
+  border-radius: 5px;
+  width: 30em;
+  height: 38px;
 `;
 
 const ButtonStyle = styled.button`
-  width: 100px;
-  height: 38px;
-  position: absolute;
-  left: 945px;
-  top: 145px;
   font-family: Arial;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 21px;
+  border-radius: 5px;
+  margin-left: 5px;
+  height: 38px;
 `;
 
 const DropDownStyle = styled.select`
-  width: 100px;
-  height: 38px;
-  position: absolute;
-  left: 840px;
-  top: 146px;
   border-radius: 5px;
   font-family: Arial;
   font-size: 12px;
+  width: 10em;
+  height: 38px;
 `;
 
 const initialState = {
   name: '',
   complete: false,
   uid: '',
+  undefined: '',
 };
 
 export default function TodoForm({ obj, setTodos, setEditItem }) {
@@ -101,8 +95,8 @@ export default function TodoForm({ obj, setTodos, setEditItem }) {
   }, [obj]);
 
   return (
-    <DivStyle>
-      <form onSubmit={handleSubmit}>
+    <>
+      <DivStyle onSubmit={handleSubmit}>
         <InputStyle
           name="name"
           id="name"
@@ -115,11 +109,11 @@ export default function TodoForm({ obj, setTodos, setEditItem }) {
           className="form-select"
           name="undefined"
           id="undefined"
-          value={formInput.category}
+          value={formInput.undefined}
           onChange={handleCategoryChange}
           aria-label="category"
         >
-          <option selected>Category</option>
+          <option defaultValue>Category</option>
           <option value="cat1">Cat 1</option>
           <option value="cat2">Cat 2</option>
           <option value="cat3">Cat 3</option>
@@ -127,8 +121,8 @@ export default function TodoForm({ obj, setTodos, setEditItem }) {
         <ButtonStyle className="btn btn-success" type="submit">
           {obj.firebaseKey ? 'UPDATE' : 'SUBMIT'}
         </ButtonStyle>
-      </form>
-    </DivStyle>
+      </DivStyle>
+    </>
   );
 }
 
