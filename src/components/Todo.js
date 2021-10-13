@@ -1,6 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { updateToDo, deleteToDo } from '../api/data/todoData';
+
+const TodoStyle = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 643px;
+  height: 68px;
+  left: 399px;
+  top: 233px;
+  background-color: #ffffff;
+  border-radius: 10px;
+
+  h5 {
+    flex-grow: 2;
+    width: 134px;
+    height: 24px;
+    top: 342px;
+    left: 531px;
+    font-family: Arial;
+    color: #373a3c;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: flex-end;
+    margin-left: 20px;
+    margin-top: 5px;
+  }
+
+  button {
+    width: 110px;
+    height: 40px;
+    top: 258px;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: white;
+    border-radius: 5px;
+    margin-right: 9px;
+  }
+`;
 
 export default function Todo({ todo, setTodos, setEditItem }) {
   const handleClick = (method) => {
@@ -13,33 +55,37 @@ export default function Todo({ todo, setTodos, setEditItem }) {
 
   return (
     <>
-      <div className="alert alert-light" role="alert">
-        {todo.complete ? (
-          'Done'
-        ) : (
+      <div>
+        <TodoStyle className="alert alert-light" role="alert">
+          {todo.complete ? (
+            <button type="button" className="btn btn-success">
+              DONE
+            </button>
+          ) : (
+            <button
+              onClick={() => handleClick('update')}
+              type="button"
+              className="btn btn-success"
+            >
+              COMPLETE
+            </button>
+          )}
+          <h5>{todo.name}</h5>
           <button
-            onClick={() => handleClick('update')}
+            onClick={() => setEditItem(todo)}
             type="button"
-            className="btn btn-success"
+            className="btn btn-info"
           >
-            COMPLETE
+            EDIT
           </button>
-        )}
-        {todo.name}
-        <button
-          onClick={() => setEditItem(todo)}
-          type="button"
-          className="btn btn-info"
-        >
-          EDIT
-        </button>
-        <button
-          onClick={() => handleClick('delete')}
-          type="button"
-          className="btn btn-danger"
-        >
-          DELETE
-        </button>
+          <button
+            onClick={() => handleClick('delete')}
+            type="button"
+            className="btn btn-danger"
+          >
+            DELETE
+          </button>
+        </TodoStyle>
       </div>
     </>
   );
@@ -52,6 +98,7 @@ Todo.propTypes = {
     date: PropTypes.string,
     uid: PropTypes.string,
     firebaseKey: PropTypes.string,
+    category: PropTypes.string,
   }).isRequired,
   setTodos: PropTypes.func.isRequired,
   setEditItem: PropTypes.func.isRequired,
