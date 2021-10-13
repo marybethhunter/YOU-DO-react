@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { getTodos } from '../api/data/todoData';
 import Todo from '../components/Todo';
 import TodoForm from '../components/TodoForm';
+import Header from '../components/Header';
+import Categories from '../components/Categories';
 
 function Initialize() {
   const [todos, setTodos] = useState([]);
@@ -12,8 +14,10 @@ function Initialize() {
   }, []);
 
   return (
-    <>
+    <div>
+      <Header />
       <TodoForm obj={editItem} setTodos={setTodos} setEditItem={setEditItem} />
+      <Categories />
       {todos.map((todo) => (
         <Todo
           key={todo.firebaseKey}
@@ -22,7 +26,7 @@ function Initialize() {
           setEditItem={setEditItem}
         />
       ))}
-    </>
+    </div>
   );
 }
 
