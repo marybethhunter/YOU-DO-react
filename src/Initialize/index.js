@@ -1,55 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
 import { getTodos } from '../api/data/todoData';
-import Todo from '../components/Todo';
 import TodoForm from '../components/TodoForm';
 import Header from '../components/Header';
-
-const CategoryStyle = styled.h6`
-  color: white;
-  display: flex;
-  justify-content: left;
-`;
+import Navigation from '../components/Navigation';
+import Routes from '../routes';
 
 function Initialize() {
   const [todos, setTodos] = useState([]);
   const [editItem, setEditItem] = useState({});
 
   useEffect(() => {
-    getTodos().then(setTodos);
+    getTodos(false).then(setTodos);
   }, []);
 
   return (
     <>
+      <Navigation />
       <Header />
       <TodoForm obj={editItem} setTodos={setTodos} setEditItem={setEditItem} />
-      <CategoryStyle>Cat 1</CategoryStyle>
-      {todos.map((todo) => (todo.undefined === 'cat1' ? (
-        <Todo
-          key={todo.firebaseKey}
-          todo={todo}
-          setTodos={setTodos}
-          setEditItem={setEditItem}
-        />
-      ) : null))}
-      <CategoryStyle>Cat 2</CategoryStyle>
-      {todos.map((todo) => (todo.undefined === 'cat2' ? (
-        <Todo
-          key={todo.firebaseKey}
-          todo={todo}
-          setTodos={setTodos}
-          setEditItem={setEditItem}
-        />
-      ) : null))}
-      <CategoryStyle>Cat 3</CategoryStyle>
-      {todos.map((todo) => (todo.undefined === 'cat3' ? (
-        <Todo
-          key={todo.firebaseKey}
-          todo={todo}
-          setTodos={setTodos}
-          setEditItem={setEditItem}
-        />
-      ) : null))}
+      <Routes todos={todos} setTodos={setTodos} setEditItem={setEditItem} />
     </>
   );
 }
