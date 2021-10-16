@@ -48,9 +48,10 @@ export default function TodoForm({ obj, setTodos, setEditItem }) {
   const [formInput, setFormInput] = useState(initialState);
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormInput((prevState) => ({
       ...prevState,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
   };
 
