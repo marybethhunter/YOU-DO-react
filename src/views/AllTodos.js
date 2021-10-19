@@ -37,7 +37,13 @@ export default function AllTodos({ setTodos, setEditItem }) {
   const [allTodos, setAllTodos] = useState([]);
 
   useEffect(() => {
-    getAllTodos().then(setAllTodos);
+    let isMounted = true;
+    getAllTodos().then((todoArray) => {
+      if (isMounted) setAllTodos(todoArray);
+    });
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   const handleClick = (firebaseKey) => {

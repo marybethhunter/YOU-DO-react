@@ -7,7 +7,6 @@ const HeaderStyle = styled.h1`
   font-size: 49px;
   font-family: Arial;
   font-weight: normal;
-  margin-top: 20px;
 `;
 
 export default function Header() {

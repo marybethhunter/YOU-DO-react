@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react/cjs/react.development';
@@ -46,6 +47,7 @@ const initialState = {
 
 export default function TodoForm({ obj, setTodos, setEditItem }) {
   const [formInput, setFormInput] = useState(initialState);
+  const history = useHistory();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -79,6 +81,7 @@ export default function TodoForm({ obj, setTodos, setEditItem }) {
         setTodos(todos);
       });
       resetForm();
+      history.push('/');
     }
   };
 
