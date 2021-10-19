@@ -1,6 +1,6 @@
-# YOU-DO Todo App! [![Netlify Status](https://api.netlify.com/api/v1/badges/be269320-4f8f-4850-9853-0f597f4cf1d7/deploy-status)](https://app.netlify.com/sites/git-some-hiphop-pizza-wangs/deploys)
+# YOU-DO Todo App! [![Netlify Status](https://api.netlify.com/api/v1/badges/c9717a89-ac3d-41b8-aa8b-3913319af247/deploy-status)](https://app.netlify.com/sites/mbh-youdo-react/deploys)
 
-## [View Site]()
+## [View Site](https://mbh-youdo-react.netlify.app/)
 ## Get Started:
 
 ```javascript
@@ -35,6 +35,7 @@
 * Styled Components
 * Firebase
 * Axios
+* Netlify
 * Postman
 
 ## Code Snippets:
