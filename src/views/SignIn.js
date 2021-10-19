@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { Spinner } from 'reactstrap';
 import { signInUser } from '../api/auth';
+
+const WelcomeStyle = styled.h1`
+  color: white;
+`;
 
 export default function SignIn({ user }) {
   return (
@@ -15,7 +20,7 @@ export default function SignIn({ user }) {
         </div>
       ) : (
         <div className="text-center mt-5">
-          <h1>Welcome! Sign In!</h1>
+          <WelcomeStyle>Welcome! Sign In!</WelcomeStyle>
           <button
             type="button"
             className="btn btn-success"
