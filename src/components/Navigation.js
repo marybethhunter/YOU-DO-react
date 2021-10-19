@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
-import { ButtonGroup } from 'reactstrap';
 import { signOutUser } from '../api/auth';
 
 const NavStyle = styled.div`
@@ -13,7 +12,7 @@ export default function Navigation() {
 
   return (
     <NavStyle className="text-center mb-3">
-      <ButtonGroup size="lg">
+      <div className="btn-group" role="group" aria-label="Basic example">
         <button
           onClick={() => history.push('/')}
           type="button"
@@ -42,7 +41,7 @@ export default function Navigation() {
         >
           Log Out
         </button>
-      </ButtonGroup>
+      </div>
     </NavStyle>
   );
 }
