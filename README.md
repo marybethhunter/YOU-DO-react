@@ -23,7 +23,7 @@
 #### **Authentication**: 
 * All users will have to log in to the app with Google.
 
-### [Loom video walkthrough]()
+### [Loom video walkthrough](https://www.loom.com/share/fa8cf64398bf4e39888da0043a9929c2)
 
 ## Relevant Links:
 * [Figma Wireframe](https://www.figma.com/file/4YVF79vgSfeSj0H1G9HYDy/YOU-DO-MVP?node-id=3%3A2)
@@ -58,5 +58,8 @@
 ```
 
 ## Screenshots:
+
+<img width="579" alt="home page" src="https://user-images.githubusercontent.com/86667443/137927107-bbf7c38c-648d-4232-bf03-0f422a25f991.png">
+<img width="516" alt="completed todos" src="https://user-images.githubusercontent.com/86667443/137927126-f906ea6c-3883-450a-9e3f-cf873d867a82.png">
 
 ### Contributors: [Mary Beth Hunter](https://github.com/marybethhunter)
