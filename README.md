@@ -17,6 +17,9 @@
 * The user can create, read, update, and delete all todos. 
 * The user can mark todos as completed and see all completed todos separate from the incomplete todos.
 * There is a third view showing all todos, both completed and incompleted. 
+
+#### **Categories**:
+* The user can assign a category to the incomplete todos upon creation or change the category when updating. 
 #### **Authentication**: 
 * All users will have to log in to the app with Google.
 
