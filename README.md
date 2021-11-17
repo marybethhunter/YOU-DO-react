@@ -1,6 +1,6 @@
-# YOU-DO Todo App! [![Netlify Status](https://api.netlify.com/api/v1/badges/c9717a89-ac3d-41b8-aa8b-3913319af247/deploy-status)](https://app.netlify.com/sites/mbh-youdo-react/deploys)
+# YOU-DO Todo App!
 
-## [View Site](https://mbh-youdo-react.netlify.app/)
+## [View Site](https://you-do-react.vercel.app/)
 ## Get Started:
 
 ```javascript
