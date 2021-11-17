@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { useEffect } from 'react/cjs/react.development';
 import { createTodo, updateToDo } from '../api/data/todoData';
 
 const DivStyle = styled.form`
